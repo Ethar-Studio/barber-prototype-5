@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MQS — الخدمات</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#fbfbf9;--ink:#1a1a1a;--line:#e6e4dd;--mut:#8a857c}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:"Tajawal",sans-serif;background:var(--bg);color:var(--ink);max-width:1280px;margin:0 auto;overflow-x:hidden}
+  a{text-decoration:none;color:inherit}
+  header{display:flex;align-items:center;justify-content:space-between;padding:28px 60px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:100}
+  .logo{display:inline-flex;align-items:flex-end}
+  nav{display:flex;gap:34px;color:var(--mut);font-weight:500;font-size:16px}
+  nav a{color:var(--mut)}nav a:hover{color:var(--ink)}nav a.active{color:var(--ink);font-weight:700}
+  .btn{background:var(--ink);color:#fff;font-weight:700;font-size:16px;padding:12px 28px;border:none;border-radius:40px;cursor:pointer;font-family:"Tajawal";display:inline-block}
+  .ghost{background:transparent;border:1.5px solid var(--ink);color:var(--ink);font-family:"Tajawal";font-weight:700;font-size:16px;padding:11px 28px;border-radius:40px;cursor:pointer;display:inline-block}
+  /* page hero */
+  .phero{padding:80px 60px 70px;text-align:center;border-bottom:1px solid var(--line)}
+  .phero .lbl{color:var(--mut);font-weight:700;letter-spacing:2px;font-size:13px;margin-bottom:18px}
+  .phero h1{font-size:72px;font-weight:900;letter-spacing:-1px;line-height:1.05}
+  .phero p{font-size:20px;color:var(--mut);max-width:520px;margin:20px auto 0;line-height:1.7}
+  /* category */
+  .cat{padding:70px 60px;border-bottom:1px solid var(--line)}
+  .cat-title{display:flex;align-items:baseline;gap:18px;margin-bottom:40px}
+  .cat-title h2{font-size:38px;font-weight:900}
+  .cat-title small{color:var(--mut);font-weight:700;font-size:14px;letter-spacing:2px}
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .sv{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px 30px;display:flex;flex-direction:column}
+  .sv .top{display:flex;justify-content:space-between;align-items:flex-start}
+  .sv h3{font-size:22px;font-weight:900}
+  .sv .price{font-size:24px;font-weight:900;text-align:left;direction:ltr;white-space:nowrap}
+  .sv .price span{font-size:13px;font-weight:500;color:var(--mut)}
+  .sv p{color:var(--mut);font-size:15px;margin-top:12px;line-height:1.6;flex:1}
+  .sv .dur{margin-top:16px;color:var(--mut);font-size:14px;font-weight:700;display:flex;align-items:center;gap:6px}
+  .sv .dur::before{content:"";width:14px;height:14px;border:1.5px solid var(--line);border-radius:50%;display:inline-block}
+  .sv.feat{border-color:var(--ink);background:var(--ink);color:#fff}
+  .sv.feat p{color:#c8c5bc}
+  .sv.feat .dur{color:#c8c5bc}
+  .sv.feat .price{color:#fff}
+  .sv.feat .price span{color:#c8c5bc}
+  /* bundles */
+  .bundles{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .bun{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+  .bun h3{font-size:22px;font-weight:900}
+  .bun p{color:var(--mut);font-size:15px;margin-top:6px;line-height:1.5}
+  .bun .right{text-align:left;flex-shrink:0}
+  .bun .price{font-size:30px;font-weight:900;direction:ltr}
+  .bun .save{background:#f0eee7;color:var(--mut);font-size:13px;font-weight:700;padding:4px 12px;border-radius:30px;margin-top:8px;display:inline-block}
+  /* note */
+  .note{background:#f5f3ee;border-radius:16px;padding:28px 34px;margin:0 60px 60px;display:flex;gap:18px;align-items:flex-start}
+  .note .icon{font-size:26px;flex-shrink:0}
+  .note p{color:var(--mut);font-size:16px;line-height:1.7}
+  /* cta */
+  .cta-band{padding:80px 60px;text-align:center;border-top:1px solid var(--line)}
+  .cta-band h2{font-size:52px;font-weight:900;letter-spacing:-1px}
+  .cta-band p{color:var(--mut);font-size:18px;margin:16px 0 30px}
+  footer{padding:50px 60px;text-align:center;border-top:1px solid var(--line)}
+  .foot-links{display:flex;justify-content:center;gap:28px;color:var(--mut);font-size:15px}
+  .foot-links a{color:var(--mut)}
+
+  .wa{position:fixed;bottom:32px;left:32px;width:56px;height:56px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.4);z-index:999;cursor:pointer;text-decoration:none}
+  .wa svg{width:30px;height:30px}
+
+  /* SVG icon sizing overrides */
+  .sv .icon svg{width:32px;height:32px;stroke:#1a1a1a}
+  .bc .av svg{width:38px;height:38px;stroke:#b0aaa0}
+  .bc .ph svg{width:48px;height:48px;stroke:#b0aaa0}
+  .gitem .ph svg{width:54px;height:54px;stroke:#b0aaa0}
+  .note .icon svg{width:22px;height:22px;stroke:var(--mut)}
+  .detail .icon svg{width:28px;height:28px;stroke:var(--ink)}
+  .stars-svg svg{width:15px;height:15px;fill:var(--ink);vertical-align:middle;margin-left:1px}
+  .rv .stars-svg svg{fill:var(--ink)}
+  .bc .rating .stars-svg svg{fill:var(--ink)}
+  /* responsive */
+  @media (max-width: 820px) {
+    header{padding:16px 20px;flex-wrap:wrap;gap:12px}
+    nav{order:3;width:100%;justify-content:center;flex-wrap:wrap;gap:16px;font-size:15px}
+    .phero{padding:50px 20px 40px}
+    .phero h1{font-size:44px}
+    .phero p{font-size:18px}
+    .cat{padding:40px 20px}
+    .cat-title h2{font-size:30px}
+    .services,.bundles{grid-template-columns:1fr}
+    .bun{flex-direction:column;align-items:flex-start;gap:14px}
+    .bun .right{text-align:right}
+    .note{margin:0 20px 40px;padding:22px}
+    .cta-band{padding:50px 20px}
+    .cta-band h2{font-size:34px}
+    footer{padding:40px 20px}
+    .foot-links{flex-wrap:wrap;gap:16px}
+    .wa{bottom:20px;left:20px}
+  }
+  @media (max-width: 480px) {
+    .phero{padding:42px 18px 34px}
+    .phero h1{font-size:34px}
+    .phero p{font-size:16px}
+    .cat{padding:34px 18px}
+    .cat-title h2{font-size:26px}
+    .cta-band h2{font-size:28px}
+  }
+</style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo" style="display:inline-flex;align-items:flex-end;line-height:1"><svg width="140" height="46" viewBox="0 0 140 46" fill="none" xmlns="http://www.w3.org/2000/svg" direction="ltr" style="direction:ltr"><text x="0" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#1a1a1a" letter-spacing="4">MQS</text><line x1="0" y1="38" x2="140" y2="38" stroke="#1a1a1a" stroke-width="1.5"/><text x="1" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="8" fill="#8a857c" letter-spacing="7">BARBER</text></svg></a>
+    <nav>
+      <a href="services.html" class="active">الخدمات</a>
+      <a href="team.html">الحلاقين</a>
+      <a href="gallery.html">أعمالنا</a>
+      <a href="hours.html">الدوام</a>
+    </nav>
+</header>
+
+  <div class="phero">
+    <div class="lbl">الخدمات والأسعار</div>
+    <h1>كل خدمة بسعرها</h1>
+    <p>قائمة كاملة بخدماتنا وأسعارها. الحجز مجاني — تدفع فقط بالصالون.</p>
+  </div>
+
+  <div class="cat" style="border-bottom:none">
+    <div class="cat-title"><h2>باقات</h2><small>BUNDLES</small></div>
+    <div class="bundles">
+      <div class="bun">
+        <div>
+          <h3>باقة الكامل</h3>
+          <p>قص + لحية + مساج رأس. اللي يجي للصالون ويبي يطلع كامل.</p>
+        </div>
+        <div class="right">
+          <div class="price">١١٠ ريال</div>
+          <div class="save">وفّر ١٥ ريال</div>
+        </div>
+      </div>
+      <div class="bun">
+        <div>
+          <h3>باقة الاسترخاء</h3>
+          <p>حمام مغربي + قص شعر + مساج. تجربة كاملة لمدة ساعتين.</p>
+        </div>
+        <div class="right">
+          <div class="price">١٨٠ ريال</div>
+          <div class="save">وفّر ٣٥ ريال</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 18 L15 18 M10 21 L14 21 M12 2 C8 2 5 5 5 9 C5 12 7 14 9 15.5 L9 18 L15 18 L15 15.5 C17 14 19 12 19 9 C19 5 16 2 12 2Z"/></svg></div>
+    <p>الأسعار المذكورة هي أسعار أساسية وقد تختلف حسب طول الشعر أو الخدمات الإضافية المطلوبة. الحجز مجاني تماماً — تدفع فقط بعد الخدمة في الصالون.</p>
+  </div>
+
+  <div class="cta-band">
+    <h2>جاهز تحجز؟</h2>
+    <p>اختر حلاقك وخدمتك واحجز كرسيك الحين.</p>
+    <a href="booking.html" class="btn">احجز موعدك</a>
+  </div>
+
+  <footer>
+    <div class="foot-links">
+      <a href="index.html">الرئيسية</a>
+      <a href="team.html">الحلاقين</a>
+      <a href="hours.html">الدوام</a>
+      <a href="booking.html">احجز</a>
+    </div>
+  </footer>
+
+
+</body>
+</html>
