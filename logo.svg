@@ -1,5 +1,5 @@
 <svg width="160" height="52" viewBox="0 0 160 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <text x="0" y="36" font-family="Georgia, &#39;Times New Roman&#39;, serif" font-size="38" font-weight="700" fill="#1a1a1a" letter-spacing="4">MQS</text>
-  <line x1="0" y1="42" x2="160" y2="42" stroke="#1a1a1a" stroke-width="1.5"></line>
-  <text x="1" y="52" font-family="Georgia, &#39;Times New Roman&#39;, serif" font-size="9" fill="#8a857c" letter-spacing="7">BARBER</text>
+  <text x="0" y="36" font-family="Georgia, &#39;Times New Roman&#39;, serif" font-size="38" font-weight="700" fill="#f2efe6" letter-spacing="4">MQS</text>
+  <line x1="0" y1="42" x2="160" y2="42" stroke="#f2efe6" stroke-width="1.5"></line>
+  <text x="1" y="52" font-family="Georgia, &#39;Times New Roman&#39;, serif" font-size="9" fill="#938b78" letter-spacing="7">BARBER</text>
 </svg>

@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet" />
 <style>
-  :root{--bg:#fbfbf9;--ink:#1a1a1a;--line:#e6e4dd;--mut:#8a857c}
+  :root{--bg:#0e0d0a;--ink:#f2efe6;--line:#272318;--mut:#938b78;--card:#161410;--soft:#201d14;--accent:oklch(0.78 0.12 82)}
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:"Tajawal",sans-serif;background:var(--bg);color:var(--ink);max-width:1280px;margin:0 auto;overflow-x:hidden}
   a{text-decoration:none;color:inherit}
@@ -16,7 +16,7 @@
   .logo{display:inline-flex;align-items:flex-end}
   nav{display:flex;gap:34px;color:var(--mut);font-weight:500;font-size:16px}
   nav a{cursor:pointer;color:var(--mut)}nav a:hover{color:var(--ink)}
-  .btn{background:var(--ink);color:#fff;font-weight:700;font-size:16px;padding:12px 28px;border:none;border-radius:40px;cursor:pointer;font-family:"Tajawal";text-decoration:none;display:inline-block}
+  .btn{background:var(--accent);color:var(--bg);font-weight:700;font-size:16px;padding:12px 28px;border:none;border-radius:40px;cursor:pointer;font-family:"Tajawal";text-decoration:none;display:inline-block}
   .ghost{background:transparent;border:1.5px solid var(--ink);color:var(--ink);font-family:"Tajawal";font-weight:700;font-size:16px;padding:11px 28px;border-radius:40px;cursor:pointer;display:inline-block}
   /* hero */
   .hero{padding:110px 60px 90px;text-align:center}
@@ -42,10 +42,10 @@
   .bc h3{font-size:21px;font-weight:900}
   .bc small{color:var(--mut);font-size:14px;display:block;margin-top:4px}
   .bc .bk{margin-top:14px;background:transparent;border:1.5px solid var(--ink);color:var(--ink);font-family:"Tajawal";font-weight:700;font-size:14px;padding:9px 26px;border-radius:40px;cursor:pointer;display:inline-block}
-  .bc .bk:hover{background:var(--ink);color:#fff}
+  .bc .bk:hover{background:var(--accent);color:var(--bg)}
   /* services preview */
   .svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .sv{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px}
+  .sv{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px}
   .sv .icon{font-size:36px;margin-bottom:14px}
   .sv h3{font-size:21px;font-weight:900}
   .sv p{color:var(--mut);font-size:15px;margin-top:8px;line-height:1.6}
@@ -60,12 +60,12 @@
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;counter-reset:step}
   .step{padding:40px 50px;border-left:1px solid var(--line);position:relative;counter-increment:step}
   .step:first-child{border-left:none}
-  .step::before{content:counter(step);font-size:64px;font-weight:900;color:#f0eee7;line-height:1;display:block;margin-bottom:16px}
+  .step::before{content:counter(step);font-size:64px;font-weight:900;color:var(--soft);line-height:1;display:block;margin-bottom:16px}
   .step h3{font-size:22px;font-weight:900;margin-bottom:10px}
   .step p{color:var(--mut);font-size:16px;line-height:1.7}
   /* testimonials */
   .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .rv{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px}
+  .rv{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px}
   .rv .stars{color:var(--ink)}
   .rv p{font-size:17px;line-height:1.7;color:var(--ink)}
   .rv .author{margin-top:20px;display:flex;align-items:center;gap:12px}
@@ -85,9 +85,9 @@
   .foot-links a{color:var(--mut)}
 .stars-svg svg{vertical-align:middle;margin-left:1px}
   /* SVG icon sizing overrides */
-  .sv .icon svg{width:32px;height:32px;stroke:#1a1a1a}
-  .bc .ph svg{width:48px;height:48px;stroke:#b0aaa0}
-  .gitem .ph svg{width:54px;height:54px;stroke:#b0aaa0}
+  .sv .icon svg{width:32px;height:32px;stroke:var(--ink)}
+  .bc .ph svg{width:48px;height:48px;stroke:var(--mut)}
+  .gitem .ph svg{width:54px;height:54px;stroke:var(--mut)}
   .note .icon svg{width:22px;height:22px;stroke:var(--mut)}
   .detail .icon svg{width:28px;height:28px;stroke:var(--ink)}
   .stars-svg svg{width:15px;height:15px;fill:var(--ink);vertical-align:middle;margin-left:1px}
@@ -129,7 +129,7 @@
 </head>
 <body>
   <header>
-    <a href="index.html" class="logo" style="display:inline-flex;align-items:flex-end;line-height:1"><svg width="140" height="46" viewBox="0 0 140 46" fill="none" xmlns="http://www.w3.org/2000/svg" direction="ltr" style="direction:ltr"><text x="0" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#1a1a1a" letter-spacing="4">MQS</text><line x1="0" y1="38" x2="140" y2="38" stroke="#1a1a1a" stroke-width="1.5"/><text x="1" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="8" fill="#8a857c" letter-spacing="7">BARBER</text></svg></a>
+    <a href="index.html" class="logo" style="display:inline-flex;align-items:flex-end;line-height:1"><svg width="140" height="46" viewBox="0 0 140 46" fill="none" xmlns="http://www.w3.org/2000/svg" direction="ltr" style="direction:ltr"><text x="0" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#f2efe6" letter-spacing="4">MQS</text><line x1="0" y1="38" x2="140" y2="38" stroke="#f2efe6" stroke-width="1.5"/><text x="1" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="8" fill="#938b78" letter-spacing="7">BARBER</text></svg></a>
     <nav>
       <a href="services.html">الخدمات</a>
       <a href="team.html">الحلاقين</a>

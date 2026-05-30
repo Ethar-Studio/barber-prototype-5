@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet" />
 <style>
-  :root{--bg:#fbfbf9;--ink:#1a1a1a;--line:#e6e4dd;--mut:#8a857c}
+  :root{--bg:#0e0d0a;--ink:#f2efe6;--line:#272318;--mut:#938b78;--card:#161410;--soft:#201d14;--accent:oklch(0.78 0.12 82)}
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:"Tajawal",sans-serif;background:var(--bg);color:var(--ink);max-width:1280px;margin:0 auto;overflow-x:hidden}
   a{text-decoration:none;color:inherit}
@@ -16,54 +16,54 @@
   .logo{display:inline-flex;align-items:flex-end}
   nav{display:flex;gap:34px;font-weight:500;font-size:16px}
   nav a{color:var(--mut)}nav a:hover{color:var(--ink)}
-  .btn{background:var(--ink);color:#fff;font-weight:700;font-size:16px;padding:12px 28px;border:none;border-radius:40px;cursor:pointer;font-family:"Tajawal";display:inline-block}
+  .btn{background:var(--accent);color:var(--bg);font-weight:700;font-size:16px;padding:12px 28px;border:none;border-radius:40px;cursor:pointer;font-family:"Tajawal";display:inline-block}
   .btn:disabled{opacity:.35;cursor:not-allowed}
   .ghost{background:transparent;border:1.5px solid var(--line);color:var(--mut);font-family:"Tajawal";font-weight:700;font-size:16px;padding:11px 28px;border-radius:40px;cursor:pointer;display:inline-block}
   /* stepper */
   .stepper{padding:36px 60px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:0}
   .step{display:flex;align-items:center;gap:12px;flex:1}
   .step-num{width:36px;height:36px;border-radius:50%;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px;color:var(--mut);flex-shrink:0;transition:.2s}
-  .step-num.done{background:var(--ink);border-color:var(--ink);color:#fff}
-  .step-num.active{background:var(--ink);border-color:var(--ink);color:#fff}
+  .step-num.done{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+  .step-num.active{background:var(--accent);border-color:var(--accent);color:var(--bg)}
   .step-label{font-size:15px;font-weight:700;color:var(--mut)}
   .step-label.active{color:var(--ink)}
   .step-conn{flex:1;height:1px;background:var(--line);margin:0 20px}
-  .step-conn.done{background:var(--ink)}
+  .step-conn.done{background:var(--accent)}
   /* main layout */
   .layout{display:grid;grid-template-columns:1fr 380px;min-height:calc(100vh - 200px)}
   .content{padding:52px 60px;border-left:1px solid var(--line)}
-  .sidebar{padding:40px 36px;background:#fff}
+  .sidebar{padding:40px 36px;background:var(--card)}
   /* step panels */
   .panel{display:none}.panel.show{display:block}
   .panel h2{font-size:40px;font-weight:900;letter-spacing:-1px;margin-bottom:8px}
   .panel .sub{color:var(--mut);font-size:17px;margin-bottom:36px}
   /* date picker */
   .datepicker{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
-  .daybtn{border:1.5px solid var(--line);border-radius:12px;padding:12px 20px;cursor:pointer;text-align:center;background:#fff;transition:.15s;min-width:90px}
-  .daybtn:hover{border-color:#aaa}
-  .daybtn.sel{border-color:var(--ink);background:var(--ink);color:#fff}
+  .daybtn{border:1.5px solid var(--line);border-radius:12px;padding:12px 20px;cursor:pointer;text-align:center;background:var(--card);transition:.15s;min-width:90px}
+  .daybtn:hover{border-color:var(--mut)}
+  .daybtn.sel{border-color:var(--accent);background:var(--accent);color:var(--bg)}
   .daybtn .dn{font-size:13px;font-weight:700;color:var(--mut)}
-  .daybtn.sel .dn{color:#ccc}
+  .daybtn.sel .dn{color:rgba(14,13,10,.62)}
   .daybtn .dd{font-size:22px;font-weight:900;margin-top:2px}
   /* time slots */
   .slots{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-  .slot{border:1.5px solid var(--line);border-radius:10px;padding:14px;cursor:pointer;text-align:center;font-weight:700;font-size:16px;direction:ltr;background:#fff;transition:.15s}
-  .slot:hover{border-color:#aaa}
-  .slot.sel{border-color:var(--ink);background:var(--ink);color:#fff}
-  .slot.taken{opacity:.35;cursor:not-allowed;background:#f5f3ee}
+  .slot{border:1.5px solid var(--line);border-radius:10px;padding:14px;cursor:pointer;text-align:center;font-weight:700;font-size:16px;direction:ltr;background:var(--card);transition:.15s}
+  .slot:hover{border-color:var(--mut)}
+  .slot.sel{border-color:var(--accent);background:var(--accent);color:var(--bg)}
+  .slot.taken{opacity:.35;cursor:not-allowed;background:var(--soft)}
   /* confirm form */
   .form-row{margin-bottom:22px}
   .form-row label{display:block;font-weight:700;font-size:15px;margin-bottom:8px}
-  .form-row input{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:14px 18px;font-size:17px;font-family:"Tajawal";background:#fff;outline:none}
-  .form-row input:focus{border-color:var(--ink)}
+  .form-row input{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:14px 18px;font-size:17px;font-family:"Tajawal";background:var(--card);color:var(--ink);outline:none}
+  .form-row input:focus{border-color:var(--accent)}
   /* sidebar summary */
   .sum-title{font-size:18px;font-weight:900;margin-bottom:22px;padding-bottom:16px;border-bottom:1px solid var(--line)}
   .sum-item{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
   .sum-item:last-of-type{border-bottom:none}
   .sum-item .lbl{color:var(--mut);font-weight:700}
   .sum-item .val{font-weight:700}
-  .sum-item .val.empty{color:#ccc}
-  .sum-free{background:#f0eee7;border-radius:12px;padding:16px;margin-top:20px;text-align:center}
+  .sum-item .val.empty{color:var(--mut)}
+  .sum-free{background:var(--soft);border-radius:12px;padding:16px;margin-top:20px;text-align:center}
   .sum-free b{display:block;font-size:22px;font-weight:900}
   .sum-free small{color:var(--mut);font-size:13px}
   /* confirm success */
@@ -103,7 +103,7 @@
 </head>
 <body>
   <header>
-    <a href="index.html" class="logo" style="display:inline-flex;align-items:flex-end;line-height:1"><svg width="140" height="46" viewBox="0 0 140 46" fill="none" xmlns="http://www.w3.org/2000/svg" direction="ltr" style="direction:ltr"><text x="0" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#1a1a1a" letter-spacing="4">MQS</text><line x1="0" y1="38" x2="140" y2="38" stroke="#1a1a1a" stroke-width="1.5"/><text x="1" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="8" fill="#8a857c" letter-spacing="7">BARBER</text></svg></a>
+    <a href="index.html" class="logo" style="display:inline-flex;align-items:flex-end;line-height:1"><svg width="140" height="46" viewBox="0 0 140 46" fill="none" xmlns="http://www.w3.org/2000/svg" direction="ltr" style="direction:ltr"><text x="0" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#f2efe6" letter-spacing="4">MQS</text><line x1="0" y1="38" x2="140" y2="38" stroke="#f2efe6" stroke-width="1.5"/><text x="1" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="8" fill="#938b78" letter-spacing="7">BARBER</text></svg></a>
     <nav>
       <a href="services.html">الخدمات</a>
       <a href="team.html">الحلاقين</a>
@@ -149,7 +149,7 @@
       <!-- Success -->
       <div class="panel" id="psuccess">
         <div class="success">
-          <div class="icon"><svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="37" fill="#1a1a1a"/><path d="M25 41 L35 51 L56 29" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="icon"><svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="37" fill="var(--accent)"/><path d="M25 41 L35 51 L56 29" stroke="var(--bg)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <h2>تم الحجز!</h2>
           <p>حجزك تم بنجاح. سيصلك تأكيد على جوالك. توصل وكرسيك جاهز لك — لا طابور ولا انتظار.</p>
           <a href="index.html" class="btn" style="font-size:18px;padding:16px 36px">رجوع للرئيسية</a>

@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet" />
 <style>
-  :root{--bg:#fbfbf9;--ink:#1a1a1a;--line:#e6e4dd;--mut:#8a857c;--card:#fff;--tagBg:#f5f3ee;--sBg:#f0eee7;--sC:#1a1a1a;--sOffBg:#f5f3ee;--sOffC:#8a857c}
+  :root{--bg:#0e0d0a;--ink:#f2efe6;--line:#272318;--mut:#938b78;--card:#161410;--tagBg:#201d14;--sBg:#201d14;--sC:#f2efe6;--sOffBg:#201d14;--sOffC:#938b78;--soft:#201d14;--accent:oklch(0.78 0.12 82)}
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:"Tajawal",sans-serif;background:var(--bg);color:var(--ink);max-width:1280px;margin:0 auto;overflow-x:hidden}
   a{text-decoration:none;color:inherit}
@@ -17,7 +17,7 @@
   nav{display:flex;gap:34px;color:var(--mut);font-weight:500;font-size:16px}
   nav a{color:var(--mut)}nav a:hover{color:var(--ink)}
   nav a.active{color:var(--ink);font-weight:700;border-bottom:2px solid var(--ink);padding-bottom:2px}
-  .btn{background:var(--ink);color:#fff;font-weight:700;font-size:16px;padding:12px 28px;border:none;border-radius:40px;cursor:pointer;font-family:"Tajawal";display:inline-block}
+  .btn{background:var(--accent);color:var(--bg);font-weight:700;font-size:16px;padding:12px 28px;border:none;border-radius:40px;cursor:pointer;font-family:"Tajawal";display:inline-block}
   .ghost{background:transparent;border:1.5px solid var(--line);color:var(--mut);font-family:"Tajawal";font-weight:700;font-size:14px;padding:8px 20px;border-radius:40px;cursor:pointer;display:inline-block}
   /* hero */
   .phero{padding:80px 60px 60px;text-align:center;border-bottom:1px solid var(--line)}
@@ -27,7 +27,7 @@
   /* cards (list layout) */
   .cards{padding:60px;display:grid;grid-template-columns:1fr;gap:24px}
   .bc{display:flex;border:1px solid var(--line);border-radius:20px;background:var(--card);overflow:hidden}
-  .bc .accent{width:6px;background:var(--ink);flex-shrink:0}
+  .bc .accent{width:6px;background:var(--accent);flex-shrink:0}
   .bc .body{padding:36px;flex:1}
   .bc .head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:10px}
   .bc .name{font-size:32px;font-weight:900}
@@ -42,7 +42,7 @@
   .bc .rating{display:flex;align-items:center;gap:6px;margin-top:14px;font-weight:700;font-size:14px;color:var(--mut)}
   .bc .rating .stars{color:var(--ink);display:inline-flex}
   .bc .rating .stars svg{width:14px;height:14px;fill:currentColor;vertical-align:middle;margin-left:1px}
-  .bc .bk{margin-top:20px;width:100%;background:var(--ink);color:#fff;border:none;font-family:"Tajawal";font-weight:700;font-size:16px;padding:13px;border-radius:40px;cursor:pointer;display:block;text-align:center}
+  .bc .bk{margin-top:20px;width:100%;background:var(--accent);color:var(--bg);border:none;font-family:"Tajawal";font-weight:700;font-size:16px;padding:13px;border-radius:40px;cursor:pointer;display:block;text-align:center}
   /* schedule */
   .schedule{padding:0 60px 70px}
   .schedule h2{font-size:38px;font-weight:900;margin-bottom:24px}
@@ -101,7 +101,7 @@
 </head>
 <body>
   <header>
-    <a href="index.html" class="logo" style="display:inline-flex;align-items:flex-end;line-height:1"><svg width="140" height="46" viewBox="0 0 140 46" fill="none" xmlns="http://www.w3.org/2000/svg" style="direction:ltr"><text x="0" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#1a1a1a" letter-spacing="4">MQS</text><line x1="0" y1="38" x2="140" y2="38" stroke="#1a1a1a" stroke-width="1.5"/><text x="1" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="8" fill="#8a857c" letter-spacing="7">BARBER</text></svg></a>
+    <a href="index.html" class="logo" style="display:inline-flex;align-items:flex-end;line-height:1"><svg width="140" height="46" viewBox="0 0 140 46" fill="none" xmlns="http://www.w3.org/2000/svg" style="direction:ltr"><text x="0" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#f2efe6" letter-spacing="4">MQS</text><line x1="0" y1="38" x2="140" y2="38" stroke="#f2efe6" stroke-width="1.5"/><text x="1" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="8" fill="#938b78" letter-spacing="7">BARBER</text></svg></a>
     <nav>
       <a href="services.html">الخدمات</a>
       <a href="team.html" class="active">الحلاقين</a>

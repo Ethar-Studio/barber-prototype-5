@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet" />
 <style>
-  :root{--bg:#fbfbf9;--ink:#1a1a1a;--line:#e6e4dd;--mut:#8a857c}
+  :root{--bg:#0e0d0a;--ink:#f2efe6;--line:#272318;--mut:#938b78;--card:#161410;--soft:#201d14;--accent:oklch(0.78 0.12 82)}
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:"Tajawal",sans-serif;background:var(--bg);color:var(--ink);max-width:1280px;margin:0 auto;overflow-x:hidden}
   a{text-decoration:none;color:inherit}
@@ -16,7 +16,7 @@
   .logo{display:inline-flex;align-items:flex-end}
   nav{display:flex;gap:34px;font-weight:500;font-size:16px}
   nav a{color:var(--mut)}nav a:hover{color:var(--ink)}nav a.active{color:var(--ink);font-weight:700}
-  .btn{background:var(--ink);color:#fff;font-weight:700;font-size:16px;padding:12px 28px;border:none;border-radius:40px;cursor:pointer;font-family:"Tajawal";display:inline-block}
+  .btn{background:var(--accent);color:var(--bg);font-weight:700;font-size:16px;padding:12px 28px;border:none;border-radius:40px;cursor:pointer;font-family:"Tajawal";display:inline-block}
   .ghost{background:transparent;border:1.5px solid var(--ink);color:var(--ink);font-family:"Tajawal";font-weight:700;font-size:16px;padding:11px 28px;border-radius:40px;cursor:pointer;display:inline-block}
   .phero{padding:80px 60px 70px;text-align:center;border-bottom:1px solid var(--line)}
   .phero .lbl{color:var(--mut);font-weight:700;letter-spacing:2px;font-size:13px;margin-bottom:18px}
@@ -25,10 +25,10 @@
   /* main grid */
   .main{display:grid;grid-template-columns:1.2fr 1fr;border-bottom:1px solid var(--line)}
   /* map */
-  .map-wrap{border-left:1px solid var(--line);position:relative;min-height:420px;background:#f0eee7;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden}
+  .map-wrap{border-left:1px solid var(--line);position:relative;min-height:420px;background:var(--soft);display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden}
   .map-bg{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 39px,var(--line) 39px,var(--line) 40px),repeating-linear-gradient(90deg,transparent,transparent 39px,var(--line) 39px,var(--line) 40px)}
   .map-pin{position:relative;z-index:1;text-align:center}
-  .pin{width:52px;height:52px;background:var(--ink);border-radius:50% 50% 50% 0;transform:rotate(-45deg);margin:0 auto}
+  .pin{width:52px;height:52px;background:var(--accent);border-radius:50% 50% 50% 0;transform:rotate(-45deg);margin:0 auto}
   .pin::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:20px;height:20px;border-radius:50%;background:var(--bg)}
   .pin-label{margin-top:18px;font-weight:900;font-size:18px}
   .pin-sub{color:var(--mut);font-size:14px;margin-top:4px}
@@ -40,7 +40,7 @@
   .hrow:last-child{border-bottom:none}
   .hrow .t{color:var(--mut);direction:ltr;font-weight:500}
   .hrow.today .t{color:var(--ink);font-weight:700}
-  .today-badge{display:inline-block;background:var(--ink);color:#fff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:30px;margin-left:12px;vertical-align:middle}
+  .today-badge{display:inline-block;background:var(--accent);color:var(--bg);font-size:12px;font-weight:700;padding:3px 10px;border-radius:30px;margin-left:12px;vertical-align:middle}
   .open-status{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;padding:8px 18px;border-radius:40px;margin-top:22px}
   .open-status .dot{width:9px;height:9px;border-radius:50%}
   .open-status.is-open{background:#e8f5ec;color:#1f7a45}
@@ -70,10 +70,10 @@
 
 
   /* SVG icon sizing overrides */
-  .sv .icon svg{width:32px;height:32px;stroke:#1a1a1a}
-  .bc .av svg{width:38px;height:38px;stroke:#b0aaa0}
-  .bc .ph svg{width:48px;height:48px;stroke:#b0aaa0}
-  .gitem .ph svg{width:54px;height:54px;stroke:#b0aaa0}
+  .sv .icon svg{width:32px;height:32px;stroke:var(--ink)}
+  .bc .av svg{width:38px;height:38px;stroke:var(--mut)}
+  .bc .ph svg{width:48px;height:48px;stroke:var(--mut)}
+  .gitem .ph svg{width:54px;height:54px;stroke:var(--mut)}
   .note .icon svg{width:22px;height:22px;stroke:var(--mut)}
   .detail .icon svg{width:28px;height:28px;stroke:var(--ink)}
   .stars-svg svg{width:15px;height:15px;fill:var(--ink);vertical-align:middle;margin-left:1px}
@@ -116,7 +116,7 @@
 </head>
 <body>
   <header>
-    <a href="index.html" class="logo" style="display:inline-flex;align-items:flex-end;line-height:1"><svg width="140" height="46" viewBox="0 0 140 46" fill="none" xmlns="http://www.w3.org/2000/svg" direction="ltr" style="direction:ltr"><text x="0" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#1a1a1a" letter-spacing="4">MQS</text><line x1="0" y1="38" x2="140" y2="38" stroke="#1a1a1a" stroke-width="1.5"/><text x="1" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="8" fill="#8a857c" letter-spacing="7">BARBER</text></svg></a>
+    <a href="index.html" class="logo" style="display:inline-flex;align-items:flex-end;line-height:1"><svg width="140" height="46" viewBox="0 0 140 46" fill="none" xmlns="http://www.w3.org/2000/svg" direction="ltr" style="direction:ltr"><text x="0" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#f2efe6" letter-spacing="4">MQS</text><line x1="0" y1="38" x2="140" y2="38" stroke="#f2efe6" stroke-width="1.5"/><text x="1" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="8" fill="#938b78" letter-spacing="7">BARBER</text></svg></a>
     <nav>
       <a href="services.html">الخدمات</a>
       <a href="team.html">الحلاقين</a>
