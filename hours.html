@@ -41,6 +41,12 @@
   .hrow .t{color:var(--mut);direction:ltr;font-weight:500}
   .hrow.today .t{color:var(--ink);font-weight:700}
   .today-badge{display:inline-block;background:var(--ink);color:#fff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:30px;margin-left:12px;vertical-align:middle}
+  .open-status{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;padding:8px 18px;border-radius:40px;margin-top:22px}
+  .open-status .dot{width:9px;height:9px;border-radius:50%}
+  .open-status.is-open{background:#e8f5ec;color:#1f7a45}
+  .open-status.is-open .dot{background:#22a35a;box-shadow:0 0 0 4px rgba(34,163,90,.18)}
+  .open-status.is-closed{background:#f4eceb;color:#a23b2f}
+  .open-status.is-closed .dot{background:#c0392b}
   /* location details */
   .details{padding:52px 60px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
   .detail{padding:26px 0}
@@ -123,6 +129,7 @@
     <div class="lbl">الدوام</div>
     <h1>وين نحن وامتى</h1>
     <p>فرع الرياض — مفتوحين كل يوم من العصر لمنتصف الليل.</p>
+    <div id="openStatus" class="open-status is-closed"><span class="dot"></span><span class="txt">—</span></div>
   </div>
 
   <div class="main">
@@ -204,6 +211,35 @@
     </div>
   </footer>
 
+  <script>
+    (function () {
+      var el = document.getElementById('openStatus');
+      if (!el) return;
+      var dotTxt = el.querySelector('.txt');
+      // كل يوم يفتح 4:00 م. الإغلاق: الجمعة 2:00 ص (تمتد لفجر السبت)، باقي الأيام 12:00 منتصف الليل.
+      function isOpen(now) {
+        var day = now.getDay();          // 0=الأحد ... 6=السبت
+        var mins = now.getHours() * 60 + now.getMinutes();
+        var open = 16 * 60;              // 4:00 م
+        if (mins >= open) return true;   // من 4 العصر لمنتصف الليل لكل الأيام
+        // الساعات الأولى بعد منتصف الليل تتبع دوام الليلة السابقة
+        if (day === 6 && mins < 2 * 60) return true; // فجر السبت = امتداد ليلة الجمعة (حتى 2 ص)
+        return false;
+      }
+      function render() {
+        var now = new Date();
+        if (isOpen(now)) {
+          el.className = 'open-status is-open';
+          dotTxt.textContent = 'حنا فاتحين الآن';
+        } else {
+          el.className = 'open-status is-closed';
+          dotTxt.textContent = 'مغلق حالياً — نفتح 4:00 العصر';
+        }
+      }
+      render();
+      setInterval(render, 60000);
+    })();
+  </script>
 
 </body>
 </html>
